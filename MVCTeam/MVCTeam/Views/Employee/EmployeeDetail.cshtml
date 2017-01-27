@@ -1,0 +1,52 @@
+﻿@model IEnumerable<uspUpdateLeaveBalances_Result>
+@{
+    ViewBag.Title = "EmployeeDetail";
+}
+
+<h2>EmployeeDetail</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VacHrs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SickHrs)
+            </th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VacHrs)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SickHrs)
+                </td>
+            </tr>
+        }
+
+    </table>

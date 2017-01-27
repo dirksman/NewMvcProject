@@ -150,6 +150,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TimeOffController.cs" />
     <Compile Include="DataAccess\AWModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -206,6 +207,7 @@
     </EntityDeploy>
     <Content Include="DataAccess\AWModel.edmx.diagram">
       <DependentUpon>AWModel.edmx</DependentUpon>
+      <SubType>Designer</SubType>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -234,6 +236,8 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Employee\EmployeeList.cshtml" />
+    <Content Include="Views\TimeOff\EmployeeDetail.cshtml" />
+    <Content Include="Views\Employee\EmployeeDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

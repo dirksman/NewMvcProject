@@ -26,7 +26,16 @@ namespace MVCTeam.DataAccess
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
+
+        public DbSet<uspUpdateLeaveBalances_Result> Employee { get; set; }
+
+
+        public IQueryable<uspUpdateLeaveBalances_Result> GetEmployeeInfo(int BSID)
+        {
+            return Employee.Where(e => e.ID == BSID);
+        }
+
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Person> People { get; set; }
     
@@ -34,5 +43,7 @@ namespace MVCTeam.DataAccess
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspUpdateLeaveBalances_Result>("uspUpdateLeaveBalances");
         }
+
+
     }
 }
