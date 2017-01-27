@@ -4,20 +4,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+     
 
 namespace MVCTeam.Controllers
 {
     public class EmployeeController : Controller
     {
-        private Entities Employees = new Entities();
+        protected Entities context = new Entities();
         // GET: Employee
-        public ActionResult EmployeeList()
+        public ActionResult EmployeeList(int? page)
         {
-            //var Emp = Employees.People.Select(a => new { a.FirstName, a.LastName, a.BusinessEntityID }).ToList();
-            //var Emp = Employees.uspUpdateLeaveBalances()
-            //    .Select(e => new { e.FirstName, e.LastName, e.ID }).ToList();
+            return View(context.People.OrderBy(a => a.LastName).ToPagedList(page ?? 1, 100));
+        }
 
-            return View(Employees.uspUpdateLeaveBalances().ToList());
+        // GET: TimeOff
+        public ActionResult EmployeeDetail(int ID)
+        {
+            //var EmpDet = context.GetEmployeeInfo(ID);
+            var EmpDet = context.uspUpdateLeaveBalances().Where(e => e.ID == ID).ToList();
+            return View(EmpDet);
         }
 
         public ActionResult EmployeeEdit(int id)
