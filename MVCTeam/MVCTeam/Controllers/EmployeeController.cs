@@ -11,12 +11,11 @@ namespace MVCTeam.Controllers
 {
     public class EmployeeController : Controller
     {
-        private Entities Employees = new Entities();
         protected Entities context = new Entities();
         // GET: Employee
         public ActionResult EmployeeList(int? page)
         {
-            return View(Employees.People.OrderBy(a => a.LastName).ToPagedList(page ?? 1, 100));
+            return View(context.People.OrderBy(a => a.LastName).ToPagedList(page ?? 1, 100));
         }
 
         // GET: TimeOff
