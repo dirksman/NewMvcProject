@@ -30,10 +30,6 @@ namespace MVCTeam.Controllers
         public ActionResult Test()
         {
             return View();
-        }
-
-        {
-            return View();
-        }
+        }              
     }
 }
