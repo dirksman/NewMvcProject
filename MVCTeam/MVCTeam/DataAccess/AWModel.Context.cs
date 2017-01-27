@@ -34,5 +34,7 @@ namespace MVCTeam.DataAccess
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspUpdateLeaveBalances_Result>("uspUpdateLeaveBalances");
         }
+
+
     }
 }
