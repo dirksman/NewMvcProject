@@ -236,12 +236,9 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Employee\EmployeeList.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\Employee\EmployeeEdit.cshtml" />
-=======
     <Content Include="Views\TimeOff\EmployeeDetail.cshtml" />
     <Content Include="Views\Employee\EmployeeDetail.cshtml" />
->>>>>>> origin/master
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
