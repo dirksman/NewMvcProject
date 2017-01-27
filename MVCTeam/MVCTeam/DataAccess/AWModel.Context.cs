@@ -27,6 +27,8 @@ namespace MVCTeam.DataAccess
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<Person> People { get; set; }
     
         public virtual ObjectResult<uspUpdateLeaveBalances_Result> uspUpdateLeaveBalances()
         {
