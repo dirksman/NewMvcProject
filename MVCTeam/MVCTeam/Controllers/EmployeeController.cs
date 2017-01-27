@@ -11,18 +11,19 @@ namespace MVCTeam.Controllers
 {
     public class EmployeeController : Controller
     {
-        protected Entities context = new Entities();
+        public Entities db = new Entities();
+
         // GET: Employee
         public ActionResult EmployeeList(int? page)
         {
-            return View(context.People.OrderBy(a => a.LastName).ToPagedList(page ?? 1, 100));
+            return View(db.People.OrderBy(a => a.LastName).ToPagedList(page ?? 1, 100));
         }
 
         // GET: TimeOff
         public ActionResult EmployeeDetail(int ID)
         {
             //var EmpDet = context.GetEmployeeInfo(ID);
-            var EmpDet = context.uspUpdateLeaveBalances().Where(e => e.ID == ID).ToList();
+            var EmpDet = db.uspUpdateLeaveBalances().Where(e => e.ID == ID).ToList();
             return View(EmpDet);
         }
 
@@ -32,8 +33,39 @@ namespace MVCTeam.Controllers
             //var Emp = Employees.uspUpdateLeaveBalances()
             //    .Select(e => new { e.FirstName, e.LastName, e.ID }).ToList();
 
-            var ds = Employees.uspUpdateLeaveBalances().SingleOrDefault(c => c.ID == id);
+            var ds = db.uspUpdateLeaveBalances().SingleOrDefault(c => c.ID == id);
             return View(ds);
+        }
+
+
+        [HttpPost]
+        public ActionResult EmployeeEdit(int id, FormCollection form)
+        {
+            //var Emp = Employees.People.Select(a => new { a.FirstName, a.LastName, a.BusinessEntityID }).ToList();
+            //var Emp = Employees.uspUpdateLeaveBalances()
+            //    .Select(e => new { e.FirstName, e.LastName, e.ID }).ToList();
+
+            var ds = (from i in db.Employees
+                     where i.BusinessEntityID == id
+                     select i).Single();
+
+                short sickHrs = short.Parse(form["SickHrs"]);
+                short vacHrs = short.Parse(form["VacHrs"]);
+
+                ds.SickLeaveHours = sickHrs;
+                ds.VacationHours = vacHrs;
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+              
+            }
+
+            return RedirectToAction("EmployeeList");
+          
         }
     }
 }
