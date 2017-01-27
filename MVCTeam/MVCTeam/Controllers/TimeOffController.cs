@@ -11,20 +11,12 @@ namespace MVCTeam.Controllers
     public class TimeOffController : Controller
     {
         protected Entities context;
-        public DbSet<uspUpdateLeaveBalances_Result> Employee { get; set; }
 
-
-        public IQueryable<uspUpdateLeaveBalances_Result> GetEmployeeInfo(int BSID)
-        {
-             return Employee.Where(e=>e.ID==BSID);
-        }
-
-        
         // GET: TimeOff
-        public ActionResult EmployeeDetail()
+        public ActionResult EmployeeDetail(int ID)
         {
-            var EmpDet = context.
-            return View();
+            var EmpDet = context.GetEmployeeInfo(ID);
+            return View(EmpDet);
         }
     }
 }
