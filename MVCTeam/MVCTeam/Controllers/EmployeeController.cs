@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+     
 
 namespace MVCTeam.Controllers
 {
@@ -11,13 +13,9 @@ namespace MVCTeam.Controllers
     {
         private Entities Employees = new Entities();
         // GET: Employee
-        public ActionResult EmployeeList()
+        public ActionResult EmployeeList(int? page)
         {
-            //var Emp = Employees.People.Select(a => new { a.FirstName, a.LastName, a.BusinessEntityID }).ToList();
-            //var Emp = Employees.uspUpdateLeaveBalances()
-            //    .Select(e => new { e.FirstName, e.LastName, e.ID }).ToList();
-
-            return View(Employees.uspUpdateLeaveBalances().ToList());
+            return View(Employees.People.OrderBy(a => a.LastName).ToPagedList(page ?? 1, 100));
         }
     }
 }
