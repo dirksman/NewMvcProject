@@ -31,5 +31,9 @@ namespace MVCTeam.Controllers
         {
             return View();
         }
+
+        {
+            return View();
+        }
     }
 }

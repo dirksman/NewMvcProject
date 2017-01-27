@@ -12,11 +12,13 @@ namespace MVCTeam.DataAccess
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
-    public partial class AW2014ConnStr : DbContext
+    public partial class Entities : DbContext
     {
-        public AW2014ConnStr()
-            : base("name=AW2014ConnStr")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
@@ -25,6 +27,10 @@ namespace MVCTeam.DataAccess
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Employee> Employees { get; set; }
+    
+        public virtual ObjectResult<uspUpdateLeaveBalances_Result> uspUpdateLeaveBalances()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<uspUpdateLeaveBalances_Result>("uspUpdateLeaveBalances");
+        }
     }
 }

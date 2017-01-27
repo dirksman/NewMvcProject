@@ -141,23 +141,23 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="DataAccess\AdventureWorksModel.Context.cs">
+    <Compile Include="DataAccess\AWModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AdventureWorksModel.Context.tt</DependentUpon>
+      <DependentUpon>AWModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataAccess\AdventureWorksModel.cs">
+    <Compile Include="DataAccess\AWModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+      <DependentUpon>AWModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataAccess\AdventureWorksModel.Designer.cs">
+    <Compile Include="DataAccess\AWModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AdventureWorksModel.edmx</DependentUpon>
+      <DependentUpon>AWModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="DataAccess\Employee.cs">
-      <DependentUpon>AdventureWorksModel.tt</DependentUpon>
+    <Compile Include="DataAccess\uspUpdateLeaveBalances_Result.cs">
+      <DependentUpon>AWModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -167,15 +167,15 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="DataAccess\AdventureWorksModel.Context.tt">
+    <Content Include="DataAccess\AWModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AdventureWorksModel.edmx</DependentUpon>
-      <LastGenOutput>AdventureWorksModel.Context.cs</LastGenOutput>
+      <DependentUpon>AWModel.edmx</DependentUpon>
+      <LastGenOutput>AWModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DataAccess\AdventureWorksModel.tt">
+    <Content Include="DataAccess\AWModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AdventureWorksModel.edmx</DependentUpon>
-      <LastGenOutput>AdventureWorksModel.cs</LastGenOutput>
+      <DependentUpon>AWModel.edmx</DependentUpon>
+      <LastGenOutput>AWModel.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -183,12 +183,12 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="DataAccess\AdventureWorksModel.edmx">
+    <EntityDeploy Include="DataAccess\AWModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AdventureWorksModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>AWModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="DataAccess\AdventureWorksModel.edmx.diagram">
-      <DependentUpon>AdventureWorksModel.edmx</DependentUpon>
+    <Content Include="DataAccess\AWModel.edmx.diagram">
+      <DependentUpon>AWModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
