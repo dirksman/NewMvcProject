@@ -29,7 +29,8 @@ namespace MVCTeam.Controllers
 
         public ActionResult Test()
         {
-            return View();
-        }
+            int a = 3;
+            return View(a);
+        }              
     }
 }
